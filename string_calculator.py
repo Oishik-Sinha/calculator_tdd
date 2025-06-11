@@ -1,5 +1,7 @@
 def add(numbers: str) -> int:
     if not numbers:
         return 0
-    if "," not in numbers:
-        return int(numbers)
+    tokens = [numbers]
+    if "," in numbers:
+        tokens = numbers.split(",")
+    return sum(int(t) for t in tokens)
