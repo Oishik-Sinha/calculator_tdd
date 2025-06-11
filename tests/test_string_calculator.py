@@ -15,5 +15,8 @@ class TestStringCalculator(unittest.TestCase):
     def test_more_than_one_numbers_separated_by_comma(self):
         self.assertEqual(add("1,5,2"), 8)
 
+    def test_handle_any_amount_of_numbers(self):
+        self.assertEqual(add("1,5,2,9,3,1"), 21)
+
 if __name__ == "__main__":
     unittest.main()
