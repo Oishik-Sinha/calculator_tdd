@@ -10,4 +10,8 @@ def add(numbers: str) -> int:
         delimiter = delim[2:]
 
     tokens = re.split(delimiter, numbers) 
-    return sum(int(t) for t in tokens)  
+    nums = [int(t) for t in tokens]
+    neg = [n for n in nums if n < 0]
+    if neg:
+        raise ValueError("negative numbers not allowed " + ",".join(map(str, neg)))
+    return sum(nums)  
